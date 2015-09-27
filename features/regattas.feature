@@ -15,3 +15,13 @@ Feature: Regattas
     | Regatta Name |
     | Nationals |
     | Europeans |
+
+  Scenario: Add a new Regatta
+    Given I am on the Sail Race Scoring website
+    and I am viewing all Regattas
+    When I add a new Regatta with the name "My Regatta"
+    Then I see there are 3 Regattas:
+    | Regatta Name |
+    | Nationals |
+    | Europeans |
+    | My Regatta |
