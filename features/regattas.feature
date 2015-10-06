@@ -1,20 +1,25 @@
-@ui
 Feature: Regattas
-  As a User
+  As a Regatta organizer
   I want to be able to see a list of all Regattas
-  So that I can check my listing
+  and track their races and participants
+  So that I can manage the even effectively
 
-  Background: Log on to the SRS Website
+  Background: I am on the Sail Race Scoring Website
     Given I open a webbrowser
-
+  and I log in to the Sail Race Scoring website
+  and I have the following Regattas:
+  | Regatta Name |
+  | Nationals |
+  | Europeans |
 
   Scenario: View regattas
-    Given I am on the Sail Race Scoring website
+    Given I am on the Sail Race Scoring Website
     When I view all Regattas
     Then I see there are 2 Regattas:
     | Regatta Name |
     | Nationals |
     | Europeans |
+
 
   Scenario: Add a new Regatta
     Given I am on the Sail Race Scoring website
@@ -25,3 +30,4 @@ Feature: Regattas
     | Nationals |
     | Europeans |
     | My Regatta |
+
