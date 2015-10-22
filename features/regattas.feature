@@ -24,9 +24,10 @@ Feature: Regattas
   Scenario: Add a new Regatta
     Given I am on the Sail Race Scoring website
     and I am viewing all Regattas
-    When I click on the "ADD REGATTA" button
-    and I enter the name "My Regatta"
-    and I click the "ADD" button
+    # Button text needs to match the case of the the DOM element (bug!)
+    When I click on the "Add Regatta" button  
+    and I enter "My Regatta" as the Regatta Name
+    and I click on the "Add" button
     Then I see there are 3 Regattas:
     | Regatta Name |
     | Nationals |
