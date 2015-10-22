@@ -6,11 +6,11 @@ Feature: Regattas
 
   Background: I am on the Sail Race Scoring Website
     Given I open a webbrowser
-  and I log in to the Sail Race Scoring website
-  and I have the following Regattas:
-  | Regatta Name |
-  | Nationals |
-  | Europeans |
+    and I log in to the Sail Race Scoring website
+    and I have the following Regattas:
+    | Regatta Name |
+    | Nationals |
+    | Europeans |
 
   Scenario: View regattas
     Given I am on the Sail Race Scoring Website
@@ -24,7 +24,9 @@ Feature: Regattas
   Scenario: Add a new Regatta
     Given I am on the Sail Race Scoring website
     and I am viewing all Regattas
-    When I add a new Regatta with the name "My Regatta"
+    When I click on the "ADD REGATTA" button
+    and I enter the name "My Regatta"
+    and I click the "ADD" button
     Then I see there are 3 Regattas:
     | Regatta Name |
     | Nationals |

@@ -30,16 +30,18 @@ Feature: Races
   Scenario: Create a new Race
     Given I am view the "Nationals" Regatta
     When I click on the "Races" button
-  and I click on the "New Race" button
-  and I enter in the following race details:
-  | Name    | Course      | Laps  |
-  | Race 3  | Trapezoid   | 3     |
-  and I click on the "+" button
+      and I click on the "New Race" button
+      and I enter in the following race details:
+      | Name    | Course      | Laps  |
+      | Race 1  | Triangle    | 3     |
+      | Race 2  | Triangle    | 3     |
+      | Race 3  | Trapezoid   | 3     |
+      and I click on the "+" button
     Then I see there are 3 Races:
-      | Race Name   | Course    | Laps | Competitors | Completed |
-      | First Race  | Triangle  | 3    | 0           | No        |
-      | Second Race | Trapezoid | 2    | 0           | No        |
-      | Race 3      | Trapezoid | 3    | 0           | No        |
+      | Race Name   | Course    | Laps |
+      | First Race  | Triangle  | 3    |
+      | Second Race | Trapezoid | 2    |
+      | Race 3      | Trapezoid | 3    |
 
   Scenario: Cancel a Race
     Given I am view the "Nationals" Regatta
