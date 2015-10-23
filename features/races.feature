@@ -44,3 +44,22 @@ Feature: Races
     | Name     | Course   | Laps | Completed |
     | Bad Race | Triangle |    3 | Cancelled |
 
+  Scenario Outline: Create a race for a <Course> Course
+    Given I am viewing all Regattas
+    When I click on the "Races" button for the "Nationals" Regatta
+    and I click on the "Add Race" button
+    and I enter in the following race details:
+    | Name  | Course    | Laps |
+    | First | <Course> |    1 |
+    and I click on the "Add" button
+    Then I see there are 1 Races:
+    | Name  | Laps | Course    | Status      |
+    | First |    1 | <Course> | Not Started |
+
+  Examples:
+    | Course    |
+    | Trapezoid |
+    | Sausage   |
+    | Triangle  |
+
+
